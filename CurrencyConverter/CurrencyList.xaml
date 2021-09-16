@@ -1,0 +1,513 @@
+﻿<Page
+    x:Class="CurrencyConverter.CurrencyList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CurrencyConverter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="Auto" Width="Auto">
+    <Page.Resources>
+        <Style TargetType="Border" x:Key="DefaultBorder">
+            <Setter Property="Background" Value="#0E151313" />
+            <Setter Property="BorderBrush" Value="#33151313" />
+            <Setter Property="BorderThickness" Value="1.5,0,1.5,1.5" />
+        </Style>
+        <Style TargetType="TextBlock" x:Key="DefaultText">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="Arial Narrow" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="AutomationProperties.SizeOfSet" Value="4" />
+            <Setter Property="CharacterSpacing" Value="-40" />
+            <Setter Property="FontStyle" Value="Normal" />
+            <Setter Property="FontStretch" Value="Normal" />
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="Button" x:Key="DefaultButton">
+            <Setter Property="Foreground" Value="#7F151313" />
+            <Setter Property="Background" Value="#003F3B3B" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="Arial Narrow" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Height" Value="70px" />
+            <Setter Property="Width" Value="100px" />
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <SolidColorBrush x:Key="ButtonBackgroundPointerOver">#263F3B3B</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonForegroundPointerOver">#7F151313</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonBackgroundPressed">#263F3B3B</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonForegroundPressed">#7F151313</SolidColorBrush>
+
+    </Page.Resources>
+    
+    <ScrollViewer>
+        <Grid x:Name="Currencys" Width="Auto" Height="Auto">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="70px"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Style="{StaticResource DefaultBorder}" Grid.Row="0">
+                <TextBlock Style="{StaticResource DefaultText}" TextAlignment="Center" HorizontalAlignment="Center">Выбор валют</TextBlock>
+            </Border>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Рубль</TextBlock>
+                <Button x:Name="RUB" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >RUB</Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Австралийский доллар</TextBlock>
+                <Button x:Name="AUD" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >AUD</Button>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Азербайджанский манат</TextBlock>
+                <Button x:Name="AZN" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >AZN</Button>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Фунт стерлингов Соединенного королевства</TextBlock>
+                <Button x:Name="GBP" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >GBP</Button>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Армянские драмы</TextBlock>
+                <Button x:Name="AMD" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >AMD</Button>
+            </Grid>
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Белорусский рубль</TextBlock>
+                <Button x:Name="BYN" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >BYN</Button>
+            </Grid>
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Болгарский лев</TextBlock>
+                <Button x:Name="BGN" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >BGN</Button>
+            </Grid>
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Бразильский реал</TextBlock>
+                <Button x:Name="BRL" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >BRL</Button>
+            </Grid>
+            <Grid Grid.Row="9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Венгерские форинты</TextBlock>
+                <Button x:Name="HUF" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >HUF</Button>
+            </Grid>
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Гонконгских долларов</TextBlock>
+                <Button x:Name="HKD" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >HKD</Button>
+            </Grid>
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Датская крона</TextBlock>
+                <Button x:Name="DKK" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >DKK</Button>
+            </Grid>
+            <Grid Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Доллар США</TextBlock>
+                <Button x:Name="USD" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >USD</Button>
+            </Grid>
+            <Grid Grid.Row="13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Евро</TextBlock>
+                <Button x:Name="EUR" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >EUR</Button>
+            </Grid>
+            <Grid Grid.Row="14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Индийский рупий</TextBlock>
+                <Button x:Name="INR" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >INR</Button>
+            </Grid>
+            <Grid Grid.Row="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Казахстанский тенге</TextBlock>
+                <Button x:Name="KZT" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >KZT</Button>
+            </Grid>
+            <Grid Grid.Row="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Канадский доллар</TextBlock>
+                <Button x:Name="CAD" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >CAD</Button>
+            </Grid>
+            <Grid Grid.Row="17">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Киргизские сомы</TextBlock>
+                <Button x:Name="KGS" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >KGS</Button>
+            </Grid>
+            <Grid Grid.Row="18">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Китайский юань</TextBlock>
+                <Button x:Name="CNY" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >CNY</Button>
+            </Grid>
+            <Grid Grid.Row="19">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Молдавский лей</TextBlock>
+                <Button x:Name="MDL" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >MDL</Button>
+            </Grid>
+            <Grid Grid.Row="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Норвежские кроны</TextBlock>
+                <Button x:Name="NOK" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >NOK</Button>
+            </Grid>
+            <Grid Grid.Row="21">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Польский злотый</TextBlock>
+                <Button x:Name="PLN" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >PLN</Button>
+            </Grid>
+            <Grid Grid.Row="22">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Румынский лей</TextBlock>
+                <Button x:Name="RON" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >RON</Button>
+            </Grid>
+            <Grid Grid.Row="23">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >СДР (специальные права заимствования)</TextBlock>
+                <Button x:Name="XDR" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >XDR</Button>
+            </Grid>
+            <Grid Grid.Row="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Сингапурский доллар</TextBlock>
+                <Button x:Name="SGD" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >SGD</Button>
+            </Grid>
+            <Grid Grid.Row="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Таджикский сомони</TextBlock>
+                <Button x:Name="TJS" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >TJS</Button>
+            </Grid>
+            <Grid Grid.Row="26">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Турецких лира</TextBlock>
+                <Button x:Name="TRY" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >TRY</Button>
+            </Grid>
+            <Grid Grid.Row="27">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Новый туркменский манат</TextBlock>
+                <Button x:Name="TMT" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >TMT</Button>
+            </Grid>
+            <Grid Grid.Row="28">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Узбекские сумы</TextBlock>
+                <Button x:Name="UZS" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >UZS</Button>
+            </Grid>
+            <Grid Grid.Row="29">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Украинская гривна</TextBlock>
+                <Button x:Name="UAH" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >UAH</Button>
+            </Grid>
+            <Grid Grid.Row="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Чешская крона</TextBlock>
+                <Button x:Name="CZK" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >CZK</Button>
+            </Grid>
+            <Grid Grid.Row="31">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Шведская крона</TextBlock>
+                <Button x:Name="SEK" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >SEK</Button>
+            </Grid>
+            <Grid Grid.Row="32">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Швейцарский франк</TextBlock>
+                <Button x:Name="CHF" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >CHF</Button>
+            </Grid>
+            <Grid Grid.Row="33">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Южноафриканские рэнды</TextBlock>
+                <Button x:Name="ZAR" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >ZAR</Button>
+            </Grid>
+            <Grid Grid.Row="34">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Вон Республики Корея</TextBlock>
+                <Button x:Name="KRW" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >KRW</Button>
+            </Grid>
+            <Grid Grid.Row="35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                    <ColumnDefinition Width="250px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100px"/>
+                    <ColumnDefinition MaxWidth="100" MinWidth="30" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border  Style="{StaticResource DefaultBorder}" Grid.ColumnSpan="5"/>
+                <TextBlock Style="{StaticResource DefaultText}" Grid.Column="1" >Японская иена</TextBlock>
+                <Button x:Name="JPY" Style="{StaticResource DefaultButton}" Grid.Column="3" Click="CurrencyPicked" >JPY</Button>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+
+</Page>
